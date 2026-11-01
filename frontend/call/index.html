@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b141a" />
+  <title>TalkBridge Call</title>
+  <link rel="icon" href="/icon.svg" />
+  <link rel="stylesheet" href="call.css?v=1" />
+</head>
+<body>
+  <!-- ───── Join screen ───── -->
+  <main id="joinScreen" class="screen join">
+    <div class="brand">
+      <div class="brand-logo">🌐</div>
+      <h1>TalkBridge Call</h1>
+      <p class="tagline">Speak your language. Everyone hears you in theirs.</p>
+    </div>
+
+    <label class="field">
+      <span>Your name</span>
+      <input id="nameInput" type="text" maxlength="24" placeholder="e.g. Om" autocomplete="nickname" />
+    </label>
+
+    <div class="field">
+      <span>I speak</span>
+      <div class="lang-picker" id="langPicker" role="radiogroup" aria-label="Your language"></div>
+      <small class="hint">You'll hear everyone else translated into this language.</small>
+    </div>
+
+    <label class="field">
+      <span>Room code</span>
+      <div class="room-row">
+        <input id="roomInput" type="text" maxlength="40" autocomplete="off" autocapitalize="none" spellcheck="false" />
+        <button id="newRoomBtn" class="ghost-btn" type="button">New</button>
+      </div>
+      <small class="hint">Share the same code (or the invite link) with the people you're calling.</small>
+    </label>
+
+    <button id="joinBtn" class="join-btn" type="button">📞 Join call</button>
+    <p id="joinError" class="error" hidden></p>
+  </main>
+
+  <!-- ───── Call screen ───── -->
+  <main id="callScreen" class="screen call" hidden>
+    <header class="call-header">
+      <div>
+        <div class="room-name" id="roomLabel"></div>
+        <div class="call-meta"><span id="callTimer">00:00</span> · <span id="peopleCount">1 person</span> · <span id="connState" class="conn">connecting…</span></div>
+      </div>
+      <button id="shareBtn" class="icon-btn" type="button" title="Invite">🔗 Invite</button>
+    </header>
+
+    <section class="tiles" id="tiles" aria-label="People in the call"></section>
+
+    <section class="caption" id="caption" aria-live="polite">
+      <div class="caption-who" id="captionWho">Waiting for someone to speak…</div>
+      <div class="caption-main" id="captionMain"></div>
+      <div class="caption-sub" id="captionSub"></div>
+    </section>
+
+    <section class="history" id="history" aria-label="Conversation"></section>
+
+    <div class="status" id="statusLine">🎙️ Listening…</div>
+
+    <nav class="controls">
+      <button id="muteBtn" class="ctrl" type="button"><span class="ctrl-icon">🎙️</span><span class="ctrl-label">Mute</span></button>
+      <button id="speakerBtn" class="ctrl" type="button"><span class="ctrl-icon">🔊</span><span class="ctrl-label">Voice on</span></button>
+      <label class="ctrl lang-ctrl"><span class="ctrl-icon">🌐</span>
+        <select id="callLangSelect" aria-label="My language"></select>
+      </label>
+      <button id="leaveBtn" class="ctrl leave" type="button"><span class="ctrl-icon">📵</span><span class="ctrl-label">Leave</span></button>
+    </nav>
+
+    <!-- Single element for all translated voice: unlocked by the Join tap so
+         phones allow it to play later without another tap. -->
+    <audio id="voice" playsinline></audio>
+  </main>
+
+  <script src="call.js?v=2"></script>
+</body>
+</html>

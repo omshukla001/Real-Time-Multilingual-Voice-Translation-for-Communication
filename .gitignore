@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+*.env
+
+# ML models (too large for git)
+*.pt
+*.bin
+*.onnx
+# Old Git history backup
+.git_old_backup/
+
+# Python virtual environments
+.venv/
+venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+# Local HTTPS certificates (run_app.py --lan)
+backend/certs/

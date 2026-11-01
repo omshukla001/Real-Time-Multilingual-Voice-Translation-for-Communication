@@ -1,0 +1,26 @@
+{
+  "name": "TalkBridge AI — Live Translation Calling App",
+  "short_name": "TalkBridge",
+  "description": "Real-time multilingual voice translation calling application with live subtitles",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e17",
+  "theme_color": "#4f46e5",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity", "communication"],
+  "shortcuts": [
+    {
+      "name": "Start Demo Room",
+      "url": "/#demo-room",
+      "description": "Quickly jump into the demo call room"
+    }
+  ]
+}

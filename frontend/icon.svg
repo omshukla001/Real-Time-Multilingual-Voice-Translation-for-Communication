@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#6366f1" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="128" fill="url(#bg)" />
+  <rect width="504" height="504" x="4" y="4" rx="124" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4" />
+
+  <!-- Central Bridge Wave graphic -->
+  <g filter="url(#shadow)" transform="translate(56, 56)">
+    <!-- Pulse circles -->
+    <circle cx="200" cy="200" r="160" fill="none" stroke="url(#glow)" stroke-width="4" stroke-opacity="0.3" stroke-dasharray="8 8" />
+    <circle cx="200" cy="200" r="120" fill="none" stroke="url(#accent)" stroke-width="6" stroke-opacity="0.5" />
+
+    <!-- Wave Bridge -->
+    <path d="M 80,220 C 130,120 170,120 200,200 C 230,280 270,280 320,180" 
+          fill="none" stroke="url(#glow)" stroke-width="24" stroke-linecap="round" />
+    
+    <!-- Sound Waves & Dots -->
+    <circle cx="80" cy="220" r="18" fill="#38bdf8" />
+    <circle cx="320" cy="180" r="18" fill="#a855f7" />
+    
+    <!-- Microphone / Headset symbol -->
+    <path d="M 180,180 A 20,20 0 0,1 220,180 L 220,220 A 20,20 0 0,1 180,220 Z" fill="#ffffff" />
+    <path d="M 165,210 A 35,35 0 0,0 235,210" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+    <line x1="200" y1="245" x2="200" y2="270" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+    <line x1="180" y1="270" x2="220" y2="270" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+  </g>
+</svg>
